@@ -1,0 +1,106 @@
+body {
+    background-color: #000000;
+/*Tudo que estiver transbordando esconde (barra de rolagem)*/
+    overflow: hidden;
+}
+
+main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {
+    /*display: none; tira os elementos da tela*/
+    display: none;
+    /*vh unidade de medida relacionado ao dispositivo que esta sendo acesado*/
+    height: 100vh;
+
+}
+
+main .personagem.selecionado {
+    /*display: block; mostra o elemento */
+    display: block;
+}
+
+main .personagem .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo {
+    position: absolute;
+    top: 0;
+    left: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 370px;
+    z-index: 1;
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 25px;
+}
+
+.conteudo .logo {
+    background-image: url(../imagens/Demon-Slayer-Logo.png);
+    background-size: cover;
+    background-position: 250%;
+    height: 220px;
+    width: 360px;
+    margin-bottom: 40px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;;
+    width: 170px;
+
+    gap: 12px;
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50px;
+
+}
+
+.botoes .botao img {
+    border-radius: 50px;
+    width: 90px;
+    height: 90px;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9;
+}
